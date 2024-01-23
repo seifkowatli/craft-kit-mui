@@ -1,0 +1,34 @@
+{
+  "name": "craft-kit-mui",
+  "version": "0.0.1",
+  "description": "A Development kit built on top of mui library to help boost the development process",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports" : {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0" 
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seifkowatli/craft-kit-mui.git"
+  },
+  "author": "Seif Kowatli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seifkowatli/craft-kit-mui/issues"
+  },
+  "homepage": "https://github.com/seifkowatli/craft-kit-mui#readme"
+}

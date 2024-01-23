@@ -1,0 +1,1 @@
+export const testRun  = () => "Hello Craft Kit !"
