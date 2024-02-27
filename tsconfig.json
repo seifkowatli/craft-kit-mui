@@ -2,6 +2,7 @@
   "include": ["src"],
   /* Include only the src directory */
   "compilerOptions": {
+    "jsx": "react-jsx",
     "allowJs": true /* Allow JavaScript files to be compiled. */,
     "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */ ,
     "module": "commonjs" /* Specify what module code is generated. */ ,
