@@ -1,6 +1,6 @@
 {
   "name": "craft-kit-mui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Development kit built on top of mui library to help boost the development process",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
