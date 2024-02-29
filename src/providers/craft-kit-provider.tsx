@@ -1,7 +1,9 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, ReactNode, useContext, useState, Dispatch, SetStateAction,
+} from "react";
 
 interface CraftKitProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
+  initialContext: CraftKitState;
 }
 
 interface StorageKeys {
@@ -25,18 +27,18 @@ interface CraftKitState {
 
 interface CraftKitContextProps {
   craftKitState: CraftKitState;
-  setCraftKitState: React.Dispatch<React.SetStateAction<CraftKitState>>;
+  setCraftKitState: Dispatch<SetStateAction<CraftKitState>>;
 }
 
 export const CRAFT_KIT_SHARED_STATE: CraftKitState = {
   localeMessages: {},
   langs: {},
-  currentLang: '',
+  currentLang: "",
   storageKeys: {
     token: null,
   },
-  currentTheme: 'light',
-  defaultHost: '',
+  currentTheme: "light",
+  defaultHost: "",
   roles: [],
 };
 
@@ -47,13 +49,16 @@ export const CraftKitContext = createContext<CraftKitContextProps | undefined>(u
 export const useCraftKitState = () => {
   const context = useContext(CraftKitContext);
   if (!context) {
-    throw new Error('useCraftKitState must be used within a CraftKitProvider');
+    throw new Error("useCraftKitState must be used within a CraftKitProvider");
   }
   return context;
 };
 
-export function CraftKitProvider({ children }: CraftKitProviderProps) {
-  const [craftKitState, setCraftKitState] = useState<CraftKitState>(CRAFT_KIT_SHARED_STATE);
+export function CraftKitProvider({
+  children,
+  initialContext: CraftKitState = CRAFT_KIT_SHARED_STATE,
+}: CraftKitProviderProps) {
+  const [craftKitState, setCraftKitState] = useState<CraftKitState>(CraftKitState);
 
   const contextValue: CraftKitContextProps = {
     craftKitState,
