@@ -15,10 +15,10 @@ const cacheLtr = createCache({
  
 
 export const EmotionCacheProvider = ({ children }) => {
-  const {craftKitState : {currentLang}} = useCraftKitState();
+const {craftKitState : {preferences}} = useCraftKitState();
 
 
-  const isRtl = () => currentLang === 'ar';
+  const isRtl = () => preferences.lang === 'ar';
   return (
     <CacheProvider value={isRtl() ? cacheRtl : cacheLtr}>
       <Box dir={isRtl() ? 'rtl' : 'ltr'}>{children}</Box>

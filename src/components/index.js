@@ -4,3 +4,5 @@ export { default as CopyToClipboard } from './copy-to-clipboard';
 
 export * from './form';
 export * from './entity-view';
+export * from './layout';
+

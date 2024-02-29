@@ -17,8 +17,8 @@ export const usePermissions = () => {
   const userHavePermission = requiredPermission =>
     isHavePermission(userPermissionsArray, requiredPermission);
 
-  const useHaveOneOfPermissions = requiredPermissions =>
+  const userHaveOneOfPermissions = requiredPermissions =>
     isHaveOneOfPermissions(userPermissionsArray, requiredPermissions);
 
-  return { userPermissionsArray, userHavePermission , useHaveOneOfPermissions };
+  return { userPermissionsArray, userHavePermission , userHaveOneOfPermissions };
 };

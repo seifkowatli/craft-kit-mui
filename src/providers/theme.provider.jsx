@@ -13,14 +13,14 @@ export const palette = (theme) => {
 
 export function ThemeContextProvider({ children }) {
   const {
-    craftKitState: { currentTheme, currentLang },
+    craftKitState: {preferences },
   } = useCraftKitState();
 
   const theme = createTheme({
-    direction: currentLang === "ar" ? "rtl" : "ltr",
+    direction: preferences.lang === "ar" ? "rtl" : "ltr",
     palette: {
-      ...palette(currentTheme),
-      mode: currentTheme,
+      ...palette(preferences.theme),
+      mode: preferences.theme,
     },
   });
 

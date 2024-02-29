@@ -4,11 +4,11 @@ import { useCraftKitState } from "../craft-kit-provider";
 
 export function I18nProvider({ children }) {
   const {
-    craftKitState: { localeMessages, currentLang },
+    craftKitState: { localeMessages, preferences },
   } = useCraftKitState();
 
   return (
-    <IntlProvider locale={currentLang} messages={localeMessages[currentLang]}>
+    <IntlProvider locale={preferences.lang} messages={localeMessages[preferences.lang]}>
       {children}
     </IntlProvider>
   );
